@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#psw").focus(function (e) {
+                $.get("A.do",{name:$("#username").val()},function (response,status,xhr) {
+                   console.log(response);
+                    if (response == "true")
+                    {
+                        $("#span1").text("可以注册");
+                    }
+                })
+            })
+
+            // &("#div1").load(
+            //     'file/Demo.txt',
+            //     function (response,status,xhr) {
+            //         // console.log(response);
+            //         // console.log(status);
+            //         // console.log(xhr);
+        })
+    </script>
+</head>
+<body>
+    <div id="div1">
+        <form>
+
+            用户名:<input type="text" id="username"/> <span id="span1"></span>
+            <br/>
+            密码:<input type="password" id="psw"/>
+            <br/>
+            <button id="btn1">登录</button>
+
+        </form>
+    </div>
+</body>
+</html>
