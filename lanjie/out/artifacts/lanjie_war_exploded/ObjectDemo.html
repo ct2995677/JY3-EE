@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        // window.onload = function(ev){
+        //     var person = {
+        //         age : 15,
+        //         name : "张三",
+        //         sleep : function(){
+        //
+        //             console.log("睡觉");
+        //
+        //         }
+        //     }
+        //     // console.log(person.age);
+        //     // person.sleep();
+        //
+        //     var data = ["张三",true,null,person];
+        //     console.log(data[3].sleep);
+        //
+        // }
+        
+        $(function(){
+            $.get(
+                "server.do",function (data){
+                    var obj = eval(data);
+                    console.log(obj[0].name);
+                    console.log(data);
+
+
+                }
+            )
+        })
+        
+        
+    </script>
+</head>
+<body>
+
+</body>
+</html>
